@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+//재귀로 탐색
+//간단하게 dfs 사용
+//배열 만들고 탐색
+//나눠진 영역마다 dfs 수행
+
+//왼위오아
+
+// 일단 배열 만들기
+
+// 재귀 이용하기위해 dfs
+
+//탐색 순서는 무조건 왼쪽노드부터
+
+//배열 생성 - 좌표 부분은 다녀온것으로 표현
+
+//배열 훑기 - 다녀오지 않은 부분있으면 dfs 수행
+
+//배열 sort

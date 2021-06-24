@@ -1,0 +1,8 @@
+cin cout 은 시간을 굉장히 잡아먹는다
+stdio.h 를 사용하는게 좋은 것 같다.
+
+cout 을 사용할 때 endl 은 버퍼를 비우는 역할도 수행하기 때문에 시간이 오래걸린다.
+endl 하나때문에 시간초과가 뜨기도 하네
+
+ios_base::sync_with_stdio(false); cin.tie(NULL);
+C의 입출력 함수와의 버퍼 동기화 해제, cin, cout 동기화 해제
