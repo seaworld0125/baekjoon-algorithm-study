@@ -30,11 +30,11 @@ int binary_search_while(int * arr, int begin, int end, int target){     //이분
 }
 
 int main(){ios_base::sync_with_stdio(false); cin.tie(NULL);
-    int arr[] = {2, 2, 2, 2, 2, 3, 4, 5};
+    int arr[] = {0, 2, 2, 2, 2, 3, 4, 5};
 
     //C++ STL 사용
-    int upp_index = upper_bound(arr, arr+7, 4) - arr;     //이분 탐색 기반 // KEY 값보다 (큰) 최초의 원소를 반환함
-    int low_index = lower_bound(arr, arr+7, 4) - arr;     //이분 탐색 기반 // KEY 값보다 (같거나 큰) 최초의 원소를 반환함
+    int upp_index = upper_bound(arr, arr+7, 2) - arr;     //이분 탐색 기반 // KEY 값보다 (큰) 최초의 원소를 반환함
+    int low_index = lower_bound(arr, arr+7, 1) - arr;     //이분 탐색 기반 // KEY 값보다 (같거나 큰) 최초의 원소를 반환함
     cout << upp_index << endl;
     cout << low_index << endl;
 
