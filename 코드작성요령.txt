@@ -3,6 +3,22 @@ stdio.h 를 사용하는게 좋은 것 같다.
 cout 을 사용할 때 endl 은 버퍼를 비우는 역할도 수행하기 때문에 시간이 오래걸린다.
 endl 하나때문에 시간초과가 뜨기도 하네
 
------>>> ios_base::sync_with_stdio(false); cin.tie(NULL);
------>>> C의 입출력 함수와의 버퍼 동기화 해제, cin, cout 동기화 해제
+-->> ios_base::sync_with_stdio(false); cin.tie(NULL);
+-->> C의 입출력 함수와의 버퍼 동기화 해제, cin, cout 동기화 해제
 
+
+배열 초기화
+_1차원 배열 
+-->> int arr[10] = {0};
+-->> fill_n(arr, 10, 1) 
+-->> fill_n(시작주소, 데이터 개수, 값) 
+
+_2차원 배열
+-->> int arr[10][3] = {0};          (??)
+-->> int arr[10][3] = {{0,0,0}, };  (확실히됨)
+-->> fill_n(arr[0], 30, 1)
+-->> 형식은 똑같은데 주의할 께 1차원이랑 다르게 arr로 하면 에러 뜸
+
+
+큰 수 설정
+-->> #define INF 1e9 : 10억 설정
