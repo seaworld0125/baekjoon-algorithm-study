@@ -2,7 +2,6 @@
 #include <cstring>
 #include <cstdlib>
 #include <queue>
-// #include <tuple>
 #define endl '\n'
 using namespace std;
 
@@ -113,8 +112,9 @@ void move(int y, int x, int length)
     MAP[sY][sX] = 0;
     sX = x;
     sY = y;
-    // 상어 사이즈 증가
+
     fat++;
+    // 상어 사이즈 증가
     if(fat == sS)
     {
         fat = 0;
@@ -140,6 +140,7 @@ int main(){
         }
     }
     while(1){
+        // 물고기 좌표 저장
         vector<pair<int, int>> fish_pos;
         pair<int, int> data = BFS(fish_pos);
 
