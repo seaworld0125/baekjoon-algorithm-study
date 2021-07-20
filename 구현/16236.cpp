@@ -8,9 +8,9 @@ using namespace std;
 
 int N;
 int time_count = 0;
-int sY, sX;//shark Y, X
-int sS = 2;//shark size
-int fat = 0;
+int sY, sX; //shark Y, X
+int sS = 2; //shark size
+int fat = 0;//먹은 물고기 수
 
 int dy[4] = {1, 0, 0, -1};//위ㅡ왼ㅡ오ㅡ아
 int dx[4] = {0, -1, 1, 0};  
@@ -33,9 +33,7 @@ pair<int, int> BFS(vector<pair<int, int>> & fish_pos)
     bool exit = false;
     while(!exit && !dst.empty())
     {   
-        // cout << "----------------------" << endl;
         length++;
-        // cout << "dst.size :" << dst.size() << endl;
         int size = dst.size();
         for(int i = 0; i < size; i++)
         {
@@ -46,9 +44,7 @@ pair<int, int> BFS(vector<pair<int, int>> & fish_pos)
                 x_ = dst.front().second;
                 dst.pop();
             }
-
             visited[y_][x_] = true;
-            // cout << "y_ :" << y_ << ", " << "x_ :" << x_ << endl;
 
             //주변 확인
             for(int j = 0; j < 4; j++)
@@ -65,7 +61,6 @@ pair<int, int> BFS(vector<pair<int, int>> & fish_pos)
                     {
                         //물고기 위치 저장
                         fish_pos.push_back({ay, ax});
-                        //물고기 수++
                         fish_count++;
                         //탈출
                         if(!exit){
@@ -81,15 +76,14 @@ pair<int, int> BFS(vector<pair<int, int>> & fish_pos)
             }
         }
     }
-    // cout << "----------------------" << endl;
-    // cout << "\n::BFS return\n  fish_count :" << fish_count << endl << "  length :" << length << endl;
     return {fish_count, length}; 
 }
 // 가까운 물고기 중에 상어가 먹을 물고기 고르기
-pair<int, int> searchD(vector<pair<int, int>> & fish_pos)
+int searchD(vector<pair<int, int>> & fish_pos)
 {
     int y = fish_pos[0].first;
     int x = fish_pos[0].second;
+    int target = 0;
 
     for(int i = 1; i < fish_pos.size(); i++)
     {   
@@ -100,15 +94,16 @@ pair<int, int> searchD(vector<pair<int, int>> & fish_pos)
         {
             y = fish_y;
             x = fish_x;
+            target = i;
         }// 같은 높이, 더 왼쪽에 있는 경우
         else if(y == fish_y && x > fish_x)
         {
             y = fish_y;
-            x = fish_x;            
+            x = fish_x;
+            target = i;            
         }
     }
-    // cout << "\n::searchD\n  x :" << x << "\n  y :" << y << "\n\n";
-    return {y, x};
+    return target;
 }
 // 아기 상어를 이동시키는 함수
 void move(int y, int x, int length)
@@ -145,10 +140,9 @@ int main(){
         }
     }
     while(1){
-        // cout << "----------------\nsS :" << sS << "\nfat :" << fat << "\n----------------\n";
         vector<pair<int, int>> fish_pos;
         pair<int, int> data = BFS(fish_pos);
-        // auto [fish_count, y, x] = searchMap();
+
         int fish_count = data.first;
         int length = data.second;
 
@@ -160,8 +154,8 @@ int main(){
         }
         else if(fish_count >= 2)// 두 마리 이상일 때
         {
-            pair<int, int> D =  searchD(fish_pos);
-            move(D.first, D.second, length);
+            int index =  searchD(fish_pos);
+            move(fish_pos[index].first, fish_pos[index].second, length);
         }
     }
     if(time_count == -1) cout << 0;
