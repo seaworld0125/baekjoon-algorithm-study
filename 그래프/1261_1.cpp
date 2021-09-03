@@ -4,7 +4,7 @@
 #define endl "\n"
 #define MAX 100
 using namespace std;
- 
+
 int N, M, Answer;
 int MAP[MAX][MAX];
 int Dist[MAX][MAX];
