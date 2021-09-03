@@ -57,7 +57,7 @@ int main(void)
     }
     
     // 최단 거리 테이블을 모두 무한으로 초기화
-    fill(d, d + 100001, INF);
+    fill_n(d, 100001, INF);
     
     // 다익스트라 알고리즘을 수행
     dijkstra(start);
