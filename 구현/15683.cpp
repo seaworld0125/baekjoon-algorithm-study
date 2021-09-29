@@ -6,7 +6,8 @@ using namespace std;
 // 세로 N, 가로 M
 int N, M, blindSpot = 100;
 int map[8][8];
-struct CAMERA {
+class CAMERA {
+public:
     int type, y, x;
 };
 
@@ -170,7 +171,7 @@ int main() {
             int tmp;
             cin >> tmp;
             map[i][j] = tmp;
-            if(tmp >= 1 && tmp <= 5) list.emplace_back(tmp, i, j);
+            if(tmp >= 1 && tmp <= 5) list.push_back(new CAMERA(tmp, i, j));
             sort(list.begin(), list.end(), compare);
             checkCameraList();
         }

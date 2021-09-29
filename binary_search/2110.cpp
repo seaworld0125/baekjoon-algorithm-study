@@ -2,7 +2,6 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
-
 using namespace std;
 
 int N, C;
