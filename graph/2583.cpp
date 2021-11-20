@@ -15,15 +15,11 @@ int moveX[4] = {-1, 0, 1, 0}; //왼위오아
 int moveY[4] = {0, 1, 0, -1};
 
 void makeArr(int x1, int y1, int x2, int y2){ // 일단 배열 만들기
-    for(int i = 0; i < M; i++){
-        if(i >= y1 && i < y2){
-            for(int j = 0; j < N; j++){
-                if(j >= x1 && j < x2){
+    for(int i = 0; i < M; i++)
+        if(i >= y1 && i < y2)
+            for(int j = 0; j < N; j++)
+                if(j >= x1 && j < x2)
                     if(arr[i][j] == 0) arr[i][j] = '1';
-                }
-            }
-        }
-    }
 }
 void dfs(int y, int x){ // 재귀 이용하기위해 dfs
     int nodeX, nodeY;
