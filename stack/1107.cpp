@@ -1,58 +1,50 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
-
+#include <cmath>
 using namespace std;
 
-bool remote[10];
-bool canRemote = true;
+int N, M;
+int ans;
+
+bool brokenButtonList[10];
 
 int check(int target) {
-    int share = target / 10;
+    int share = target / 10, count = 0;
     do
     {
-        if(remote[target % 10]) {
+        if(brokenButtonList[target % 10]) {
             target = share;
             share /= 10;
+            count++;
         }
-        else return false;
+        else return 0;
     } while (target);
 
-    return true;
-}
-
-int findClosedNum(int base, int target) {
-    int high = base, low = base;
-    while(1) {
-        if(canRemote && check(high)) break;
-        if(high == target) break;
-        high++;
-    }
-    while(low >= 0) {
-        if(canRemote && check(low)) break;
-        if(low == target) break;
-        low--;
-    }
-
-    return (high - base < base - low)
+    return count;
 }
 
 int main() {
-    int NOW = 100, ans = 1e9;
-    int N, M, temp;
-    fill(remote, remote + 10, true);
+    fill(brokenButtonList, brokenButtonList + 10, false);
 
     cin >> N >> M;
-    for(int i = 0; i < M; i++) {
-        cin >> temp;
-        remote[temp] = false; 
-    }
-    if(M == 10) canRemote = false;
 
-    if(N == NOW) {
+    for(int i = 0; i < M; i++) {
+        int tmp;
+        cin >> tmp;
+        brokenButtonList[tmp] = true;
+    }
+
+    if(N == 100) { // 이동할 필요 없음
         cout << 0;
         return 0;
     }
+    
+    ans = abs(N - 100);
+    for(int i = 0; i <= 10000000; i++) {
+        int now = i, count;
 
-
+        if(count = check(now))
+            ans = min(ans, abs(N - now) + count);
+    }   
+    cout << ans;
 }
