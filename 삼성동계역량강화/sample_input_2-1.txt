@@ -1,0 +1,52 @@
+1 100
+50
+0 qvkhxzzlkhuiyoj 1
+1 bqylk 1 2 qvkhxzzlkhuiyoj 1
+1 eekwqlflvadizbugiw 1 1 qvkhxzzlkhuiyoj 1
+1 geucohydfstklku 1 2 bqylk 1
+1 estjwke 0 1 qvkhxzzlkhuiyoj 1
+3 estjwke 1 1
+3 geucohydfstklku 0 0
+1 amzudfrvdtttfezny 1 1 geucohydfstklku 0
+1 kjuxnt 1 1 geucohydfstklku 0
+1 rxqgqqxlbin 0 2 bqylk 1
+1 cslmnwfprsxicrodyp 0 2 eekwqlflvadizbugiw 1
+1 rguhlxjrznkazvembvh 1 2 eekwqlflvadizbugiw 1
+1 en 1 2 qvkhxzzlkhuiyoj 1
+1 tqjcqgpepylcroaylq 1 1 en 0
+1 bipnszvn 0 1 rxqgqqxlbin 1
+1 fscpaqwsvlpmqo 1 2 bipnszvn 1
+1 fuumqnbbpnywxd 0 2 rguhlxjrznkazvembvh 1
+1 sgzphcsnv 0 1 rxqgqqxlbin 0
+1 dfqcvsnijtu 1 1 geucohydfstklku 0
+1 lsswp 1 2 rguhlxjrznkazvembvh 1
+1 sty 1 2 eekwqlflvadizbugiw 1
+1 atqnpjeaf 1 0 eekwqlflvadizbugiw 0
+2 rguhlxjrznkazvembvh cslmnwfprsxicrodyp 2
+3 lsswp 1 1
+2 rxqgqqxlbin bqylk 1
+1 jibuih 1 1 eekwqlflvadizbugiw 1
+3 sty 0 0
+2 rguhlxjrznkazvembvh bipnszvn 3
+2 en sty 3
+2 cslmnwfprsxicrodyp en 3
+1 szdpoccaluxtsv 1 1 rguhlxjrznkazvembvh 0
+1 trihjqho 0 0 fscpaqwsvlpmqo 1
+1 pyuqrll 1 1 qvkhxzzlkhuiyoj 0
+1 v 1 2 jibuih 1
+3 fuumqnbbpnywxd 0 0
+1 c 0 1 jibuih 1
+3 v 0 0
+3 en 1 1
+1 kayzz 0 1 estjwke 1
+1 zffpikamihinbgekcvb 1 1 estjwke 1
+1 rgpahqfi 0 2 rxqgqqxlbin 1
+1 ydhdaygwzglajapbz 1 1 lsswp 0
+1 vprdwpugh 1 0 estjwke 0
+3 rgpahqfi 1 1
+1 wbekdmyrs 1 0 kayzz 0
+1 ahhezrdzphdgi 0 2 bipnszvn 1
+1 jil 1 2 en 1
+1 vyrrogkirfory 1 1 c 1
+1 qewojimuptnyyrhp 1 1 en 0
+1 rytki 0 2 v 1

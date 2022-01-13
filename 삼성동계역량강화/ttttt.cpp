@@ -1,18 +1,21 @@
 #include <iostream>
 #include <map>
+#include <string>
 #include <vector>
 using namespace std;
 
+struct Test {
+    string name;
+    Test(char * n) : name(n) {}
+};
+
 int main() {
-    int map[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    vector<int> v = {0,1,2,3};
 
-    cout << *(map[0]) << endl;
-    cout << *(map[2]) << endl;
+    vector<int> s;
 
-    for(int i = 0; i < 3; i++)
-        fill(map[i], map[i] + 3, 0);
+    v.swap(s);
 
-    for(int i = 0; i < 3; i++)
-        for(int j = 0; j < 3; j++)
-            cout << map[i][j] << ' ';
+    cout << s.size();
+    cout << " " << v.size();
 }
