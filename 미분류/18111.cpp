@@ -4,33 +4,34 @@
 
 using namespace std;
 
-int N, M, B;
+int N, M, B, ansTime = 1e9, ansStand = -1e9;
 vector<int> map;
 int mapSize;
 
-pair<int, int> solve() {
-    int standIdx = (mapSize / 2) - 1;
-    if(B == 0) standIdx = mapSize - 1;
-
-    while(standIdx < mapSize) {
-        int stand = map[standIdx];
+void solve() {
+    for(int stand = 0; stand <= 256; stand++) {
         int time = 0;
         int block = B;
 
         for(int i = 0; i < mapSize; i++) {
-            if(map[i] > stand) time += 2 * (map[i] - stand);
-            else if(map[i] < stand) {
-                block -= 1;
-                if(block < 0) {
-                    standIdx++;
-                    break;
-                }
-                time += stand - map[i];
+            if(map[i] == stand) continue;
+            else if(map[i] > stand) {
+                block += (map[i] - stand);
+                time += (2 * (map[i] - stand));
+            }
+            else {
+                block -= (stand - map[i]);
+                time += (stand - map[i]);
             }
         }
-        // cout << "stand : " << stand << ", standIdx : " << standIdx << ", time : " << time << ", block : " << block << endl; 
         if(block >= 0) {
-            return {time, stand};    
+            if(ansTime > time) {
+                ansTime = time;
+                ansStand = stand;
+            }
+            else if(ansTime == time) {
+                ansStand = max(ansStand, stand);
+            }
         }
     }
 }
@@ -47,7 +48,6 @@ int main() {
         return a > b;
     });
 
-    auto ans = solve();
-
-    cout << ans.first << ' ' << ans.second;
+    solve();
+    cout << ansTime << ' ' << ansStand;
 }
