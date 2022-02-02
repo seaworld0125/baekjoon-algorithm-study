@@ -1,16 +1,15 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <cmath>
 using namespace std;
 
+class Test{
+public:
+    int c = -1;
+};
+
 int main(){
-    vector<int> a = {1,7, 5, 5, 5, 4, 3};
-
-    sort(a.begin(), a.end(), [](int a, int b) {
-        return a > b;
-    });
-
-    for(int i = 0; i < a.size(); i++) {
-        cout << a[i] << " ";
-    }
+    // cout << pow(10, 1);
+    cout << pow(10, 0);
 }
